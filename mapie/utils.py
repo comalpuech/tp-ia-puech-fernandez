@@ -859,13 +859,10 @@ def _compute_classification_quantile(
     """
     n = len(conformity_scores)
     if len(conformity_scores.shape) <= 2:
-        quantiles_ = np.stack(
+        sorted_scores = np.sort(conformity_scores, axis=0)
+        quantiles_ = np.array(
             [
-                np.quantile(
-                    conformity_scores,
-                    ((n + 1) * (1 - _alpha)) / n,
-                    method="higher",
-                )
+                sorted_scores[int(np.ceil((n + 1) * (1 - _alpha))) - 1, 0]
                 for _alpha in alpha_np
             ]
         )
