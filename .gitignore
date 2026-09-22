@@ -83,3 +83,6 @@ doc/generated/
 
 # Local virtual environment
 .venv/
+
+# Local OpenCode configuration
+opencode.json
