@@ -1,6 +1,6 @@
 def is_palindrome(s: str) -> bool:
     """Renvoie True si s est un palindrome (insensible à la casse et aux espaces)."""
-    cleaned = s.lower()
+    cleaned = s.replace(" ", "").lower()
     return cleaned == cleaned[::-1]
 
 
