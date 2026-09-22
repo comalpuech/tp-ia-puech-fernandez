@@ -80,3 +80,6 @@ uv.lock
 # Docs
 site/
 doc/generated/
+
+# Local virtual environment
+.venv/

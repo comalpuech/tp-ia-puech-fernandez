@@ -1,6 +1,6 @@
 # TP Introduction à l'IA — assistance au développement
 
-**Binôme :** Côme-Alexis PUECH — <Prénom NOM>
+**Binôme :** Côme-Alexis PUECH — Roman FERNANDEZ
 **Dépôt de travail :** scikit-learn-contrib/MAPIE
 **Assistant utilisé :** OpenCode + Aristote (Qwen3.6-35B-A3B, Qwen3.8-Flash-Next, gemma-4-31B)
 
