@@ -863,8 +863,8 @@ def _compute_classification_quantile(
             [
                 np.quantile(
                     conformity_scores,
-                    ((n + 1) * (1 - _alpha)) / n,
-                    method="higher",
+                    np.ceil((1 - _alpha) * (n + 1)) / n,
+                    method="lower",
                 )
                 for _alpha in alpha_np
             ]

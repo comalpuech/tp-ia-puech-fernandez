@@ -80,6 +80,10 @@ uv.lock
 # Docs
 site/
 doc/generated/
+.venv/
+.claude/
+opencode.json
+prompts.log
 
 # Local virtual environment
 .venv/
