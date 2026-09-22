@@ -870,6 +870,27 @@ class TestComputeRegressionQuantile:
 class TestComputeClassificationQuantile:
     """Tests for the _compute_classification_quantile function."""
 
+    def test_order_statistic_property(self):
+        """Test that the function returns the k-th order statistic where
+        k = ceil((n + 1) * (1 - alpha)).
+
+        The quantile used in conformal prediction for classification must
+        correspond to the k-th smallest conformity score, not to an
+        interpolated value from np.quantile with method='higher'.
+        """
+        import math
+
+        scores = np.array([[0.1], [0.2], [0.3]], dtype=float)
+        alpha = np.array([0.5])
+        n = len(scores)
+
+        result = _compute_classification_quantile(scores, alpha)
+
+        k = int(math.ceil((n + 1) * (1 - alpha[0])))
+        expected = scores[k - 1, 0]
+
+        np.testing.assert_allclose(result[0], expected)
+
     def test_basic(self):
         """Test classification path produces finite quantiles."""
         scores = np.random.rand(100, 1)
