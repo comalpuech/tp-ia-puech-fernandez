@@ -1,4 +1,4 @@
-from toolbox import is_palindrome, word_frequency
+from toolbox import is_palindrome, word_frequency, celsius_to_fahrenheit
 
 
 def test_is_palindrome_simple():
@@ -31,3 +31,23 @@ def test_word_frequency_punctuation():
 def test_word_frequency_empty():
     result = word_frequency("")
     assert result == {}
+
+
+def test_celsius_to_fahrenheit_freezing():
+    assert celsius_to_fahrenheit(0) == 32.0
+
+
+def test_celsius_to_fahrenheit_boiling():
+    assert celsius_to_fahrenheit(100) == 212.0
+
+
+def test_celsius_to_fahrenheit_body_temp():
+    assert celsius_to_fahrenheit(37) == 98.6
+
+
+def test_celsius_to_fahrenheit_negative():
+    assert celsius_to_fahrenheit(-40) == -40.0
+
+
+def test_celsius_to_fahrenheit_zero():
+    assert celsius_to_fahrenheit(0) == 32.0
